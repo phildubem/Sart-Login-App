@@ -1,22 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:loginflutterapp/SignUp.dart';
 import 'FormCard.dart';
-import 'SignUp.dart';
 
-
-void main() => runApp(MaterialApp(
-  home: MyApp(),
-  debugShowCheckedModeBanner: false,
-));
-
-class MyApp extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  State<StatefulWidget> createState() {
+    return _SignUp();
+  }
 }
 
-class _MyAppState extends State<MyApp> {
+class _SignUp extends State<SignUp> {
 
   Widget horizontalLine() => Padding(
     padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -29,31 +22,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334, /*allowFontScaling: true*/);
-    return new Scaffold(
+
+    return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: true,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-        Container(
-          width: ScreenUtil.getInstance().setWidth(330),
-          height: ScreenUtil.getInstance().setHeight(100),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF73AEF5),
-                Color(0xFF61A4F1),
-                Color(0xFF478DE0),
-                Color(0xFF398AE5),
-              ],
-              stops: [0.1, 0.4, 0.7, 0.9],
-            ),
-          ),
-        ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
@@ -69,16 +44,16 @@ class _MyAppState extends State<MyApp> {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 30.0),
+              padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 60.0),
               child: Column(
                 children: <Widget>[
                   Row (
                     children: <Widget>[Image.asset("",
-                    width: ScreenUtil.getInstance().setWidth(110),
-                    height: ScreenUtil.getInstance().setHeight(110),
+                      width: ScreenUtil.getInstance().setWidth(110),
+                      height: ScreenUtil.getInstance().setHeight(110),
                     ),
-                    Text("",
-                    style: TextStyle()),
+                      Text("",
+                          style: TextStyle()),
                     ],
                   ),
                   SizedBox(
@@ -120,10 +95,10 @@ class _MyAppState extends State<MyApp> {
                           child: Center(
                             child: Text("SIGN IN",
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.0
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.0
                               ),
                             ),
                           ),
@@ -133,6 +108,10 @@ class _MyAppState extends State<MyApp> {
                   ),
                   SizedBox(
                     height: ScreenUtil.getInstance().setWidth(40),
+                  ),
+
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(40),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -145,34 +124,30 @@ class _MyAppState extends State<MyApp> {
                       horizontalLine()
                     ],
                   ),
-                  SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(10),
-                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         "Don't Have an Account?",
-                        style: TextStyle(color:Colors.white, fontWeight: FontWeight.w300),
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
                       ),
 
                       FlatButton(onPressed: (){
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (BuildContext context) => SignUp())
-                        );
+                        Navigator.pop(context);
                       },
-                      child: InkWell(
-                        onTap: () {},
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0),
-                          child: Text("Sign up",
-                            style:
-                            TextStyle(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 10.0),
+                            child: Text("Go back Home",
+                              style:
+                              TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold
-                            ),),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
                       ),
 
 
@@ -186,5 +161,5 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+  
 }
-
