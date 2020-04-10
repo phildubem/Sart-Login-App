@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'FormCard.dart';
@@ -109,7 +110,45 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                  ), 
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setWidth(40),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      horizontalLine(),
+                      Text("OR", style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w300,
+                      ),),
+                      horizontalLine()
+                    ],
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(40),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Don't Have an Account?",
+                        style: TextStyle(fontWeight: FontWeight.w300),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10.0),
+                          child: Text("Sign up",
+                            style:
+                            TextStyle(
+                                color: Color(0xFF5d74e3),
+                                fontWeight: FontWeight.bold
+                            ),),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

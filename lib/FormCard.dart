@@ -5,95 +5,95 @@ class FormCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-        width: double.infinity,
-        height: ScreenUtil.getInstance().setHeight(500),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0.0, 15.0),
-              blurRadius: 15.0,
+      width: double.infinity,
+      height: ScreenUtil.getInstance().setHeight(500),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            offset: Offset(0.0, 15.0),
+            blurRadius: 15.0,
+          ),
+          BoxShadow(
+            color: Colors.black12,
+            offset: Offset(0.0, -10.0),
+            blurRadius: 10.0,
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "Login",
+              style: TextStyle(
+                fontSize: ScreenUtil.getInstance().setHeight(45),
+                fontWeight: FontWeight.bold,
+                letterSpacing: .6,
+              ),
             ),
-            BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0.0, -10.0),
-              blurRadius: 10.0,
+
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(30),
+            ),
+            Text(
+              "Username",
+              style: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: ScreenUtil.getInstance().setHeight(26),
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "username",
+                hintStyle: TextStyle(
+                    color: Colors.grey, fontSize: 12.0
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(30),
+            ),
+            Text(
+              "Password",
+              style: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: ScreenUtil.getInstance().setHeight(26),
+              ),
+            ),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: "password",
+                hintStyle: TextStyle(
+                    color: Colors.grey, fontSize: 12.0
+                ),
+              ),
+            ),
+            SizedBox(
+              height: ScreenUtil.getInstance().setHeight(35),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.normal,
+                    fontSize: ScreenUtil.getInstance().setHeight(28),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                "Login",
-                style: TextStyle(
-                  fontSize: ScreenUtil.getInstance().setHeight(45),
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: .6,
-                ),
-              ),
-
-              SizedBox(
-                height: ScreenUtil.getInstance().setHeight(30),
-              ),
-              Text(
-                "Username",
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: ScreenUtil.getInstance().setHeight(26),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "username",
-                  hintStyle: TextStyle(
-                      color: Colors.grey, fontSize: 12.0
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: ScreenUtil.getInstance().setHeight(30),
-              ),
-              Text(
-                "Password",
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: ScreenUtil.getInstance().setHeight(26),
-                ),
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: "password",
-                  hintStyle: TextStyle(
-                      color: Colors.grey, fontSize: 12.0
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: ScreenUtil.getInstance().setHeight(35),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.normal,
-                      fontSize: ScreenUtil.getInstance().setHeight(28),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      );
+      ),
+    );
   }
 }
