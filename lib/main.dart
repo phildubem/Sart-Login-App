@@ -146,7 +146,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                   SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(10),
+                    height: ScreenUtil.getInstance().setHeight(30),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -156,13 +156,12 @@ class _MyAppState extends State<MyApp> {
                         style: TextStyle(color:Colors.white, fontWeight: FontWeight.w300),
                       ),
 
-                      FlatButton(onPressed: (){
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (BuildContext context) => SignUp())
-                        );
-                      },
-                      child: InkWell(
-                        onTap: () {},
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => SignUp()),
+                          );
+                        },
                         child: Padding(
                           padding: EdgeInsets.only(left: 10.0),
                           child: Text("Sign up",
@@ -173,7 +172,9 @@ class _MyAppState extends State<MyApp> {
                             ),),
                         ),
                       ),
-                      ),
+
+
+
 
 
                     ],

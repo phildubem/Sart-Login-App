@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'FormCard.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -59,7 +58,7 @@ class _SignUp extends State<SignUp> {
                   SizedBox(
                     height: ScreenUtil.getInstance().setHeight(180),
                   ),
-                  FormCard(),
+                  /*FormCard(),*/
                   SizedBox(height: ScreenUtil.getInstance().setHeight(40)),
                   Row(
                     children: <Widget>[
@@ -91,9 +90,11 @@ class _SignUp extends State<SignUp> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {},
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
                           child: Center(
-                            child: Text("SIGN IN",
+                            child: Text("Login Page",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -112,46 +113,6 @@ class _SignUp extends State<SignUp> {
 
                   SizedBox(
                     height: ScreenUtil.getInstance().setHeight(40),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      horizontalLine(),
-                      Text("OR", style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w300,
-                      ),),
-                      horizontalLine()
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "Don't Have an Account?",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
-                      ),
-
-                      FlatButton(onPressed: (){
-                        Navigator.pop(context);
-                      },
-                        child: InkWell(
-                          onTap: () {},
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 10.0),
-                            child: Text("Go back Home",
-                              style:
-                              TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-
-                    ],
                   ),
                 ],
               ),
